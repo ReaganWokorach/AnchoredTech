@@ -5,4 +5,4 @@ Allow: /
 # Block thank-you page from indexing (no value to searchers)
 Disallow: /thank-you.html
 
-Sitemap: https://hopeanchortech.netlify.app/sitemap.xml
+Sitemap: https://hopeanchortech.pages.dev/sitemap.xml

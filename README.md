@@ -8,8 +8,8 @@ A professional, fully responsive multi-page website for **HopeAnchor Tech**, a f
 
 ## Live Site
 
-> Deployed at: **[https://hopeanchortech.netlify.app](https://hopeanchortech.netlify.app)**
-> *(Update this URL after your first Netlify deployment)*
+> Deployed at: **[https://hopeanchortech.pages.dev](https://hopeanchortech.pages.dev)**
+> *(This is a placeholder — update it site-wide once you know your real Cloudflare Pages URL or custom domain. See "Updating the site URL" below.)*
 
 ---
 
@@ -21,25 +21,26 @@ hopeanchor-tech/
 ├── about.html        # About — story, mission, founder
 ├── services.html     # Services — Bureau + Technical
 ├── training.html     # Training — all courses + FAQ
-├── contact.html      # Contact — Netlify form
+├── contact.html      # Contact — Web3Forms-powered form
 ├── 404.html          # Custom 404 error page
 ├── style.css         # Full custom stylesheet
-├── script.js         # JS — nav, scroll, form validation
-├── netlify.toml      # Netlify config, headers, redirects
+├── script.js         # JS — nav, scroll, form validation, Web3Forms
+├── _headers          # Cloudflare Pages security & cache headers
+├── _redirects        # Cloudflare Pages redirects
 └── README.md         # This file
 ```
 
 ---
 
-## Deploying to Netlify
+## Deploying to Cloudflare Pages
 
 ### Option 1 — Drag & Drop (Fastest)
 1. Zip all files in this folder
-2. Go to [app.netlify.com](https://app.netlify.com)
-3. Drag the zip onto the Netlify dashboard
-4. Your site is live instantly 
+2. Go to [dash.cloudflare.com](https://dash.cloudflare.com) → **Workers & Pages** → **Create** → **Pages** → **Upload assets**
+3. Drag the zip (or the unzipped folder) onto the uploader
+4. Your site is live instantly on a `*.pages.dev` subdomain
 
-### Option 2 — GitHub + Netlify (Recommended for ongoing updates)
+### Option 2 — GitHub + Cloudflare Pages (Recommended for ongoing updates)
 
 **Step 1: Push to GitHub**
 ```bash
@@ -51,22 +52,29 @@ git remote add origin https://github.com/YOUR_USERNAME/hopeanchor-tech.git
 git push -u origin main
 ```
 
-**Step 2: Connect to Netlify**
-1. Log in to [app.netlify.com](https://app.netlify.com)
-2. Click **"Add new site" → "Import an existing project"**
-3. Choose **GitHub** and select your `hopeanchor-tech` repository
+**Step 2: Connect to Cloudflare Pages**
+1. Log in to [dash.cloudflare.com](https://dash.cloudflare.com)
+2. Go to **Workers & Pages → Create → Pages → Connect to Git**
+3. Select your `hopeanchor-tech` repository
 4. Build settings:
+   - **Framework preset:** None
    - **Build command:** *(leave blank — static site)*
-   - **Publish directory:** `.`
-5. Click **"Deploy site"**
+   - **Build output directory:** `/`
+5. Click **"Save and Deploy"**
 
 **Step 3: Custom Domain (Optional)**
-- In Netlify dashboard → **Domain settings → Add custom domain**
+- In your Pages project → **Custom domains → Set up a domain**
 - Enter `hopeanchortech.ug` (or your preferred domain)
-- Follow DNS configuration instructions
+- If the domain is registered through Cloudflare Registrar, DNS is configured automatically
 
 ### Automatic Deploys
 Once connected to GitHub, every `git push` to `main` will automatically redeploy your site. No manual steps needed.
+
+### Config files
+Cloudflare Pages reads `_headers` and `_redirects` from the root of the published folder automatically — no build step needed. These replace the old `netlify.toml`.
+
+### Updating the site URL
+This project currently uses `hopeanchortech.pages.dev` as a placeholder domain throughout (canonical tags, Open Graph tags, `sitemap.xml`, `robots.txt`). Once you know your real `.pages.dev` URL or custom domain, do a project-wide find-and-replace of `hopeanchortech.pages.dev` with the real domain.
 
 ---
 
@@ -78,18 +86,21 @@ Once connected to GitHub, every `git push` to `main` will automatically redeploy
 | About | `/about.html` | Story, mission/vision/values, founder, social model |
 | Services | `/services.html` | Business Bureau + Technical Services |
 | Training | `/training.html` | All 4 courses with full curricula + FAQ |
-| Contact | `/contact.html` | Netlify-powered contact & enrolment form |
+| Contact | `/contact.html` | Web3Forms-powered contact & enrolment form |
 | 404 | `/404.html` | Custom error page |
 
 ---
 
-## Netlify Forms
+## Email Notifications (Web3Forms)
 
-The contact form on `contact.html` uses **Netlify Forms** — no backend required.
+The contact form on `contact.html` and the newsletter forms on `index.html` / `blog.html` use **[Web3Forms](https://web3forms.com)** — a free, backend-free form-to-email service that works on any static host, including Cloudflare Pages.
 
-- Form submissions appear in your **Netlify dashboard → Forms**
-- To enable **email notifications**: Netlify dashboard → Forms → your form → **Form notifications → Add notification → Email**
-- The honeypot field (`bot-field`) is included to prevent spam
+**One-time setup:**
+1. Go to [web3forms.com](https://web3forms.com) and enter `wokorachreagan5030@gmail.com` to generate a free Access Key (no account needed).
+2. Open `script.js` and paste the key into the `WEB3FORMS_ACCESS_KEY` constant near the top of the file.
+3. Deploy. Every submission is emailed to `wokorachreagan5030@gmail.com` instantly — no dashboard, no server, nothing to configure on Cloudflare.
+
+Web3Forms' free tier covers 250 submissions/month, which is generous for a site like this. A hidden checkbox honeypot (`botcheck`) is included on every form to filter out spam bots.
 
 ---
 
@@ -112,7 +123,8 @@ The contact form on `contact.html` uses **Netlify Forms** — no backend require
 - **CSS3** — Custom properties, Grid, Flexbox, animations
 - **Vanilla JavaScript** — No frameworks, no dependencies
 - **Google Fonts** — Playfair Display + DM Sans
-- **Netlify** — Hosting + Forms (no backend needed)
+- **Cloudflare Pages** — Static hosting + CDN
+- **Web3Forms** — Contact/newsletter form emails (no backend needed)
 
 ---
 
@@ -124,7 +136,8 @@ Before going live, update the following:
 - [ ] Email: replace `wokorachreagan5030@gmail.com` with your real address
 - [ ] Location: update exact address in `contact.html` and footer
 - [ ] Testimonials: replace sample names/quotes with real ones
-- [ ] Netlify site URL: update the Live Site link above
+- [ ] Web3Forms Access Key: paste yours into `WEB3FORMS_ACCESS_KEY` in `script.js`
+- [ ] Cloudflare Pages site URL: update the Live Site link above, and find-and-replace `hopeanchortech.pages.dev` project-wide once you have your real domain
 - [ ] Add a `favicon.ico` to the root folder
 - [ ] (Optional) Add real photos to replace initials-based avatars
 

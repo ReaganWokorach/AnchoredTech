@@ -9,19 +9,19 @@
   <title>Contact Hope Anchor Tech. Enrol in Training or Request IT Services | Gulu, Uganda</title>
   <meta name="description" content="Get in touch with Hope Anchor Tech in Gulu, Uganda. Enrol in free or affordable computer courses, request web development or CV design, or explore partnership opportunities." />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="canonical" href="https://hopeanchortech.netlify.app/contact.html" />
+  <link rel="canonical" href="https://hopeanchortech.pages.dev/contact.html" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://hopeanchortech.netlify.app/contact.html" />
+  <meta property="og:url" content="https://hopeanchortech.pages.dev/contact.html" />
   <meta property="og:title" content="Contact Hope Anchor Tech — Gulu, Uganda" />
   <meta property="og:description" content="Enrol in computer training, request IT services, or partner with Hope Anchor Tech. Based in Gulu, Uganda — serving clients online worldwide." />
   <meta property="og:site_name" content="HopeAnchor Tech" />
-  <meta property="og:image" content="https://hopeanchortech.netlify.app/hatLogoBlack.png" />
+  <meta property="og:image" content="https://hopeanchortech.pages.dev/hatLogoBlack.png" />
   <meta property="og:image:width" content="800" />
   <meta property="og:image:height" content="800" />
   <meta property="og:image:alt" content="Hope Anchor Tech Logo" />
   <meta property="og:locale" content="en_UG" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://hopeanchortech.netlify.app/hatLogoBlack.png" />
+  <meta name="twitter:image" content="https://hopeanchortech.pages.dev/hatLogoBlack.png" />
   <meta name="twitter:title" content="Contact Hope Anchor Tech — Gulu, Uganda" />
   <meta name="twitter:description" content="Enrol in computer training, request IT services, or partner with Hope Anchor Tech. Based in Gulu, Uganda — serving clients online worldwide." />
   <meta name="keywords" content="contact Hope Anchor Tech, enrol computer training Uganda, IT services contact Gulu, WhatsApp Hope Anchor Tech" />
@@ -41,11 +41,11 @@
   {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    "@id": "https://hopeanchortech.netlify.app/contact.html#page",
+    "@id": "https://hopeanchortech.pages.dev/contact.html#page",
     "name": "Contact Hope Anchor Tech",
-    "url": "https://hopeanchortech.netlify.app/contact.html",
+    "url": "https://hopeanchortech.pages.dev/contact.html",
     "description": "Contact Hope Anchor Tech to enrol in training, request a service, or partner with us. Based in Gulu, Uganda. WhatsApp, email, and online form available.",
-    "publisher": {"@id": "https://hopeanchortech.netlify.app/#organization"},
+    "publisher": {"@id": "https://hopeanchortech.pages.dev/#organization"},
     "mainEntity": {
       "@type": "Organization",
       "name": "Hope Anchor Tech",
@@ -63,8 +63,8 @@
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://hopeanchortech.netlify.app/"},
-      {"@type": "ListItem", "position": 2, "name": "Contact", "item": "https://hopeanchortech.netlify.app/contact.html"}
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://hopeanchortech.pages.dev/"},
+      {"@type": "ListItem", "position": 2, "name": "Contact", "item": "https://hopeanchortech.pages.dev/contact.html"}
     ]
   }
   </script>
@@ -192,19 +192,18 @@
       </div>
 
       <!-- =====================================================
-           MAIN CONTACT FORM — Netlify Forms
-           
+           MAIN CONTACT FORM — Web3Forms
+
            EMAIL NOTIFICATIONS SETUP:
-           After deploying to Netlify, go to:
-             Site Settings → Forms → contact → Notifications
-             → Add notification → Email notification
-             → Enter: wokorachreagan5030@gmail.com
-           
-           Every form submission will then be emailed to you
-           instantly in addition to appearing in your dashboard.
-           
-           The netlify.toml file in this project also configures
-           this automatically on deploy.
+           1. Go to https://web3forms.com and enter
+              wokorachreagan5030@gmail.com to generate a free
+              Access Key (no account needed).
+           2. Open script.js and paste the key into the
+              WEB3FORMS_ACCESS_KEY constant near the top.
+           3. That's it — every submission from this form (and the
+              newsletter forms) will be emailed to you instantly.
+              Nothing needs to be configured on Cloudflare Pages;
+              submissions go straight from the browser to Web3Forms.
            ===================================================== -->
       <div class="contact-form-wrap">
         <h3><i class="fa-solid fa-paper-plane"></i> Send Us a Message</h3>
@@ -224,15 +223,11 @@
         <form
           name="contact"
           method="POST"
-          action="/thank-you.html"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
           id="contactForm"
           novalidate
         >
-          <!-- Required Netlify hidden fields -->
-          <input type="hidden" name="form-name" value="contact" />
-          <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
+          <!-- Web3Forms honeypot (spam trap, must stay empty) -->
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
 
           <div class="form-row">
             <div class="form-group">
@@ -410,24 +405,6 @@
   </button>
 
 
-  <!-- Hidden Netlify enrol form — detected by Netlify build for separate notification stream -->
-  <form name="enrol" data-netlify="true" netlify-honeypot="bot-field" hidden>
-    <input type="hidden" name="form-name" value="enrol" />
-    <input name="firstName" type="text" />
-    <input name="lastName" type="text" />
-    <input name="email" type="email" />
-    <input name="phone" type="tel" />
-    <input name="country" type="text" />
-    <select name="course">
-      <option value="">Select course</option>
-      <option>Computer Fundamentals (Free)</option>
-      <option>Advanced MS Office</option>
-      <option>Cybersecurity Awareness (Free)</option>
-      <option>Introduction to Linux</option>
-    </select>
-    <textarea name="message"></textarea>
-    <input name="bot-field" />
-  </form>
 
   <script src="script.js"></script>
   <script>

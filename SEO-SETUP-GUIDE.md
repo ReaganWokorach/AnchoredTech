@@ -32,13 +32,13 @@
 > Gets you into Google's index and shows you exactly who's finding you
 
 1. Go to: https://search.google.com/search-console
-2. Click "Add property" → enter: `https://hopeanchortech.netlify.app`
+2. Click "Add property" → enter: `https://hopeanchortech.pages.dev`
 3. Choose "HTML tag" verification method
 4. Copy the verification meta tag they give you (looks like: `<meta name="google-site-verification" content="XXXX" />`)
 5. Paste it in the `<head>` of your `index.html` (just after `<meta charset>`)
-6. Redeploy to Netlify
+6. Redeploy to Cloudflare Pages
 7. Click "Verify" in Search Console
-8. Then go to: Sitemaps → Submit: `https://hopeanchortech.netlify.app/sitemap.xml`
+8. Then go to: Sitemaps → Submit: `https://hopeanchortech.pages.dev/sitemap.xml`
 
 **Why:** Google won't reliably find your site without this. The sitemap submission
 tells Google exactly what to index and checks back regularly.
@@ -54,7 +54,7 @@ tells Google exactly what to index and checks back regularly.
 4. Category: **Computer Training School** (primary) + **IT Services** (secondary)
 5. Address: Gulu Municipality, Northern Uganda, Uganda
 6. Phone: +256 776 815217
-7. Website: https://hopeanchortech.netlify.app
+7. Website: https://hopeanchortech.pages.dev
 8. Hours: Mon–Sat 8am–6pm
 9. Verify by phone or postcard
 10. Add photos — at minimum: your logo, your training space, and the certificate
@@ -70,8 +70,8 @@ This is the fastest way to get local walk-in students.
 
 1. Go to: https://www.bing.com/webmasters
 2. Sign in with Microsoft account
-3. Add site: `https://hopeanchortech.netlify.app`
-4. Submit sitemap: `https://hopeanchortech.netlify.app/sitemap.xml`
+3. Add site: `https://hopeanchortech.pages.dev`
+4. Submit sitemap: `https://hopeanchortech.pages.dev/sitemap.xml`
 
 ---
 
@@ -80,7 +80,7 @@ Even before Search Console verifies, you can ping Google:
 
 Open this URL in your browser:
 ```
-https://www.google.com/ping?sitemap=https://hopeanchortech.netlify.app/sitemap.xml
+https://www.google.com/ping?sitemap=https://hopeanchortech.pages.dev/sitemap.xml
 ```
 Google will respond with "Sitemap notification received."
 
@@ -142,4 +142,4 @@ Typical timeline:
 | faith-based tech organization Uganda | Niche | about.html |
 
 ---
-*Generated for Hope Anchor Tech — hopeanchortech.netlify.app*
+*Generated for Hope Anchor Tech — hopeanchortech.pages.dev*

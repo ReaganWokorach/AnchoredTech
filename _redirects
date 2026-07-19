@@ -1,0 +1,8 @@
+# ============================================================
+# Hope Anchor Tech — Cloudflare Pages _redirects
+# Docs: https://developers.cloudflare.com/pages/configuration/redirects/
+# ============================================================
+
+/home        /                301
+/courses     /training.html   301
+/resources   /blog.html       301

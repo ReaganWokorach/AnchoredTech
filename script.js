@@ -1,8 +1,18 @@
 /* =========================================================
    HOPEANCHOR TECH — script.js
    Mobile nav toggle | Scroll effects | Smooth scroll
-   Form validation | Netlify form handling
+   Form validation | Web3Forms email notifications
    ========================================================= */
+
+/* ============================================================
+   WEB3FORMS CONFIG
+   Get a free Access Key at https://web3forms.com (enter
+   wokorachreagan5030@gmail.com — no account required) and
+   paste it below. Every contact + newsletter submission on
+   the site will then be emailed to that address instantly.
+   ============================================================ */
+const WEB3FORMS_ACCESS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY_HERE';
+const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -205,17 +215,21 @@ document.addEventListener('DOMContentLoaded', function () {
       if (btnLoading) btnLoading.style.display = 'inline';
       if (submitBtn) submitBtn.disabled = true;
 
-      // Encode form data for Netlify
+      // Build payload for Web3Forms
       const formData = new FormData(contactForm);
-      const body = new URLSearchParams(formData).toString();
+      const data = Object.fromEntries(formData.entries());
+      data.access_key = WEB3FORMS_ACCESS_KEY;
+      data.subject = 'New enquiry from hopeanchortech.pages.dev — ' + (data.subject || 'General');
+      data.from_name = 'Hope Anchor Tech Website';
 
-      fetch('/', {
+      fetch(WEB3FORMS_ENDPOINT, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: body
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(data)
       })
-      .then(function (response) {
-        if (response.ok) {
+      .then(function (response) { return response.json(); })
+      .then(function (result) {
+        if (result.success) {
           // Show success
           contactForm.style.display = 'none';
           if (formSuccess) {
@@ -223,12 +237,11 @@ document.addEventListener('DOMContentLoaded', function () {
             formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
         } else {
-          throw new Error('Network response was not ok');
+          throw new Error(result.message || 'Submission failed');
         }
       })
       .catch(function () {
-        // Fallback — allow native Netlify form submission
-        contactForm.submit();
+        alert('Sorry, something went wrong sending your message. Please try again, or reach us directly on WhatsApp at +256 776 815217.');
       })
       .finally(function () {
         if (btnText) btnText.style.display = 'inline';
@@ -422,13 +435,44 @@ document.querySelectorAll('.faq-acc-q').forEach(btn => {
   });
 });
 
-/* ── Newsletter form feedback ── */
+/* ── Newsletter forms — Web3Forms submission ── */
 document.querySelectorAll('form[name="newsletter"]').forEach(form => {
-  form.addEventListener('submit', function(e) {
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
     const btn = form.querySelector('button[type="submit"]');
+    const btnOriginalHTML = btn ? btn.innerHTML : '';
+
     if (btn) {
       btn.textContent = 'Subscribing...';
       btn.disabled = true;
     }
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+    data.access_key = WEB3FORMS_ACCESS_KEY;
+    data.subject = 'New newsletter subscriber — Hope Anchor Tech';
+    data.from_name = 'Hope Anchor Tech Website';
+
+    fetch(WEB3FORMS_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(data)
+    })
+    .then(function (response) { return response.json(); })
+    .then(function (result) {
+      if (result.success) {
+        if (btn) btn.innerHTML = '<i class="fa-solid fa-circle-check"></i> Subscribed!';
+        form.reset();
+      } else {
+        throw new Error(result.message || 'Submission failed');
+      }
+    })
+    .catch(function () {
+      if (btn) {
+        btn.disabled = false;
+        btn.innerHTML = btnOriginalHTML;
+      }
+      alert('Sorry, subscription failed. Please try again.');
+    });
   });
 });

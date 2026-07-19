@@ -32,8 +32,8 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
 
-  // Never cache form submissions or Netlify endpoints
-  if (e.request.url.includes('netlify') || e.request.url.includes('form')) return;
+  // Never cache form submissions or the Web3Forms API
+  if (e.request.url.includes('web3forms') || e.request.url.includes('form')) return;
 
   e.respondWith(
     fetch(e.request)
