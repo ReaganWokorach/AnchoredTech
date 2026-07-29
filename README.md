@@ -128,6 +128,28 @@ Web3Forms' free tier covers 250 submissions/month, which is generous for a site 
 
 ---
 
+## Updating style.css / script.js / the logo or icons
+
+These files are served with a long-lived, aggressive cache (up to a year for
+CSS/JS, 30 days for images) so returning visitors load the site instantly.
+That means if you edit `style.css`, `script.js`, `logo-color.png`,
+`logo-white.png`, `favicon.svg`, `favicon-32.png`, `icon-192.png`,
+`icon-512.png`, or `apple-touch-icon.png`, **a normal refresh (Ctrl+R) will
+keep showing the old cached version** — only a hard refresh (Ctrl+F5) or a
+fresh visitor will see the change, and most visitors will just see the old
+version until their cache expires.
+
+To fix this whenever you change one of those files: bump the version number
+in the `?v=` query string that's appended to every reference to that file —
+in every `.html` file, `manifest.json`, and `sw.js`'s `PRECACHE` list — and
+also bump the `CACHE` constant at the top of `sw.js` (e.g. `anchoredtech-cache-v2`
+→ `anchoredtech-cache-v3`). Changing the URL forces browsers, CDNs, and the
+service worker to treat it as a brand-new file and fetch it fresh, so the
+long cache lifetime becomes safe. A quick way to do this project-wide is a
+find-and-replace of `?v=2` → `?v=3` across the project.
+
+---
+
 ## Customisation Checklist
 
 Before going live, update the following:

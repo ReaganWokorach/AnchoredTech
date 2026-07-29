@@ -1,12 +1,12 @@
-const CACHE = 'anchoredtech-cache-v1';
+const CACHE = 'anchoredtech-cache-v3';
 
 const PRECACHE = [
   '/', '/index.html', '/about.html', '/services.html',
   '/training.html', '/contact.html', '/faq.html', '/blog.html',
   '/blog-computer-skills.html', '/blog-data-annotation.html', '/blog-start-from-zero.html',
-  '/style.css', '/script.js', '/cohort.json',
-  '/logo-color.png', '/logo-white.png', '/favicon.svg', '/favicon-32.png',
-  '/icon-192.png', '/icon-512.png', '/apple-touch-icon.png'
+  '/style.css?v=2', '/script.js?v=2', '/cohort.json',
+  '/logo-color.png?v=2', '/logo-white.png?v=2', '/favicon.svg?v=2', '/favicon-32.png?v=2',
+  '/icon-192.png?v=2', '/icon-512.png?v=2', '/apple-touch-icon.png?v=2'
 ];
 
 self.addEventListener('install', e => {
