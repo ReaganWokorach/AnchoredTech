@@ -1,11 +1,12 @@
-const CACHE = 'hat-cache-v3';
+const CACHE = 'anchoredtech-cache-v1';
 
 const PRECACHE = [
   '/', '/index.html', '/about.html', '/services.html',
   '/training.html', '/contact.html', '/faq.html', '/blog.html',
   '/blog-computer-skills.html', '/blog-data-annotation.html', '/blog-start-from-zero.html',
   '/style.css', '/script.js', '/cohort.json',
-  '/hatLogoBlack.png', '/hatLogoWhite.png', '/favicon.svg'
+  '/logo-color.png', '/logo-white.png', '/favicon.svg', '/favicon-32.png',
+  '/icon-192.png', '/icon-512.png', '/apple-touch-icon.png'
 ];
 
 self.addEventListener('install', e => {

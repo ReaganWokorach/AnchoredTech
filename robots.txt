@@ -1,4 +1,4 @@
-# Hope Anchor Tech — robots.txt
+# Anchored Tech — robots.txt
 User-agent: *
 Allow: /
 

@@ -1,4 +1,4 @@
-# Hope Anchor Tech SEO Setup Guide
+# Anchored Tech SEO Setup Guide
 ## Complete step-by-step checklist after deploying
 
 ---
@@ -50,7 +50,7 @@ tells Google exactly what to index and checks back regularly.
 
 1. Go to: https://business.google.com
 2. Click "Manage now" → Add your business
-3. Business name: **Hope Anchor Tech**
+3. Business name: **Anchored Tech**
 4. Category: **Computer Training School** (primary) + **IT Services** (secondary)
 5. Address: Gulu Municipality, Northern Uganda, Uganda
 6. Phone: +256 776 815217
@@ -93,7 +93,7 @@ These are free and take 15–30 minutes each:
 | Platform | What to do |
 |---|---|
 | **LinkedIn** | Update your LinkedIn profile → Website field → add your URL |
-| **Facebook** | Update Hope Anchor Tech Facebook page → Website field |
+| **Facebook** | Update Anchored Tech Facebook page → Website field |
 | **Crunchbase** | Create a free profile at crunchbase.com → add your org |
 | **NGO directories** | List on ngoconnect.net and devex.com (free NGO/social enterprise listings) |
 | **Uganda Yellow Pages** | List at ugandayellowpages.com |
@@ -120,7 +120,7 @@ After Search Console is verified, check weekly:
 
 Typical timeline:
 - **Week 1–2:** Google finds and indexes your site after sitemap submission
-- **Week 3–4:** You appear in searches for your brand name "Hope Anchor Tech"
+- **Week 3–4:** You appear in searches for your brand name "Anchored Tech"
 - **Month 2–3:** You start appearing for local searches like "computer training Gulu"
 - **Month 4–6:** Broader keyword rankings improve as Google trusts your site more
 
@@ -136,10 +136,10 @@ Typical timeline:
 | web development Uganda affordable | Service buyers | services.html |
 | CV design Gulu | Job seekers | services.html |
 | data labeling Uganda | B2B clients | services.html |
-| Hope Anchor Tech | Brand search | index.html |
+| Anchored Tech | Brand search | index.html |
 | computer fundamentals Gulu | Course specific | training.html |
 | cybersecurity course Africa | Broad reach | training.html |
 | faith-based tech organization Uganda | Niche | about.html |
 
 ---
-*Generated for Hope Anchor Tech — hopeanchortech.pages.dev*
+*Generated for Anchored Tech — hopeanchortech.pages.dev*

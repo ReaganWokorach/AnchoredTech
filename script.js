@@ -1,5 +1,5 @@
 /* =========================================================
-   HOPEANCHOR TECH — script.js
+   ANCHORED TECH — script.js
    Mobile nav toggle | Scroll effects | Smooth scroll
    Form validation | Web3Forms email notifications
    ========================================================= */
@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const data = Object.fromEntries(formData.entries());
       data.access_key = WEB3FORMS_ACCESS_KEY;
       data.subject = 'New enquiry from hopeanchortech.pages.dev — ' + (data.subject || 'General');
-      data.from_name = 'Hope Anchor Tech Website';
+      data.from_name = 'Anchored Tech Website';
 
       fetch(WEB3FORMS_ENDPOINT, {
         method: 'POST',
@@ -312,7 +312,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const icon      = document.getElementById('themeIcon');
 
   // Read saved preference; default to 'light'
-  const saved = localStorage.getItem('hat-theme') || 'light';
+  const saved = localStorage.getItem('anchoredtech-theme') || 'light';
   applyTheme(saved);
 
   if (toggleBtn) {
@@ -324,7 +324,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function applyTheme(theme) {
     html.setAttribute('data-theme', theme);
-    localStorage.setItem('hat-theme', theme);
+    localStorage.setItem('anchoredtech-theme', theme);
     if (icon) {
       icon.className = theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
     }
@@ -450,8 +450,8 @@ document.querySelectorAll('form[name="newsletter"]').forEach(form => {
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
     data.access_key = WEB3FORMS_ACCESS_KEY;
-    data.subject = 'New newsletter subscriber — Hope Anchor Tech';
-    data.from_name = 'Hope Anchor Tech Website';
+    data.subject = 'New newsletter subscriber — Anchored Tech';
+    data.from_name = 'Anchored Tech Website';
 
     fetch(WEB3FORMS_ENDPOINT, {
       method: 'POST',

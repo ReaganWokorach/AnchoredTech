@@ -1,8 +1,8 @@
-# HopeAnchor Tech — Official Website
+# Anchored Tech — Official Website
 
 > *"Faith without works is dead." — James 2:17*
 
-A professional, fully responsive multi-page website for **HopeAnchor Tech**, a faith-driven social enterprise based in **Gulu, Northern Uganda**, empowering the community through technology training and professional services.
+A professional, fully responsive multi-page website for **Anchored Tech**, a faith-driven social enterprise based in **Gulu, Northern Uganda**, empowering the community through technology training and professional services.
 
 ---
 
@@ -16,7 +16,7 @@ A professional, fully responsive multi-page website for **HopeAnchor Tech**, a f
 ## Project Structure
 
 ```
-hopeanchor-tech/
+anchored-tech/
 ├── index.html        # Home / Landing page
 ├── about.html        # About — story, mission, founder
 ├── services.html     # Services — Bureau + Technical
@@ -46,16 +46,16 @@ hopeanchor-tech/
 ```bash
 git init
 git add .
-git commit -m "Initial commit — HopeAnchor Tech website"
+git commit -m "Initial commit — Anchored Tech website"
 git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/hopeanchor-tech.git
+git remote add origin https://github.com/YOUR_USERNAME/anchored-tech.git
 git push -u origin main
 ```
 
 **Step 2: Connect to Cloudflare Pages**
 1. Log in to [dash.cloudflare.com](https://dash.cloudflare.com)
 2. Go to **Workers & Pages → Create → Pages → Connect to Git**
-3. Select your `hopeanchor-tech` repository
+3. Select your `anchored-tech` repository
 4. Build settings:
    - **Framework preset:** None
    - **Build command:** *(leave blank — static site)*
@@ -64,7 +64,7 @@ git push -u origin main
 
 **Step 3: Custom Domain (Optional)**
 - In your Pages project → **Custom domains → Set up a domain**
-- Enter `hopeanchortech.ug` (or your preferred domain)
+- Enter `anchoredtech.ug` (or your preferred domain)
 - If the domain is registered through Cloudflare Registrar, DNS is configured automatically
 
 ### Automatic Deploys
@@ -110,7 +110,7 @@ Web3Forms' free tier covers 250 submissions/month, which is generous for a site 
 |---|---|---|
 | `--navy` | `#0D1F3C` | Primary brand colour |
 | `--teal` | `#00A99D` | Accent / CTA |
-| `--gold` | `#F5A623` | Hope accent / highlights |
+| `--gold` | `#F5A623` | Gold accent / highlights |
 | `--white` | `#FFFFFF` | Backgrounds |
 | Font (Display) | Playfair Display | Headings |
 | Font (Body) | DM Sans | Body text |
@@ -146,12 +146,12 @@ Before going live, update the following:
 ## Author
 
 **Reagan Wokorach**
-Founder & CEO, HopeAnchor Tech
+Founder & CEO, Anchored Tech
 Gulu Municipality, Northern Uganda 🇺🇬
 
 ---
 
 ## License
 
-© 2025 HopeAnchor Tech. All rights reserved.
+© 2025 Anchored Tech. All rights reserved.
 *Built with faith & purpose in Gulu, Uganda.*
